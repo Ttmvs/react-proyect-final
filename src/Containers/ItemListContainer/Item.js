@@ -50,7 +50,7 @@ const Item = ({ product }) => {
       <CardActions>
         <Link to={`/product/${product.id}`}>
           <Button size="small" color="primary">
-            View details
+            Ver detalles
           </Button>
         </Link>
       </CardActions>

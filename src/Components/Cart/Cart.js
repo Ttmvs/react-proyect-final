@@ -28,7 +28,7 @@ const Cart = () => {
       setIdVenta(result.id)
     })
     
-    const updateCollection = doc(db, "productos","IFjcwThAUTPn5NeURIkh");
+    const updateCollection = doc(db, "productos","oucRuhKDL7BL2m233p0");
     updateDoc(updateCollection,{stock:10})
 
   }

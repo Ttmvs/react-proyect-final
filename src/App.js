@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import Navbar from "./Components/NavBar/NavBar"
-import ItemListContainer from './Containers/ItemDetailsContainer/ItemDetailsContainer'
+import ItemListContainer from './Containers/ItemListContainer/ItemListContainer'
 import ItemDetailsContainer from './Containers/ItemDetailsContainer/ItemDetailsContainer'
 import Cart from './Components/Cart/Cart'
 import CartCustomProvider from './Context/CartContext'
