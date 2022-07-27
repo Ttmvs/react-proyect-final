@@ -11,16 +11,16 @@ const Cart = () => {
   const [idVenta, setIdVenta] = useState("")
 
   const datosComprador = {
-    nombre: 'Tomas',
-    apellido: 'Diaz',
-    email: 'tignacio123@gmail.com',
+    nombre: 'Roger',
+    apellido: 'Romero',
+    email: 'r.romero@gmail.com',
   }
 
   const finalizarCompra = () => {
     const ventasCollection = collection(db, 'ventas');
     addDoc(ventasCollection, {
       datosComprador,
-      items: [{ nombre: "papa",id:1 }, { nombre: "batata",id:2 }],
+      items: [{ nombre: "polera",id:1 }, { nombre: "televisor",id:2 }],
       date: serverTimestamp(),
       total: 500
     })
@@ -28,7 +28,7 @@ const Cart = () => {
       setIdVenta(result.id)
     })
     
-    const updateCollection = doc(db, "productos","oucRuhKDL7BL2m233p0");
+    const updateCollection = doc(db, "productos","6Xg3xbwRmYMwc9yDGlZ1");
     updateDoc(updateCollection,{stock:10})
 
   }

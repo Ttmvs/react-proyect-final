@@ -1,31 +1,32 @@
 import React, { useState } from 'react'
 
-const ItemCount = ({ stock, initial, onAdd}) =>{
-    const [Producto, setProducto] = useState(initial)
+const ItemCount = ({ initial, onAdd, stock }) => {
 
-    const sumar = () =>{
-    Producto < stock && setProducto(Producto + 1)
-    Producto >= stock && alert('No hay suficiente stock del producto')
-}
+    const [Producto, setProducto] = useState(initial);
 
-    const restar = () =>{
-       setProducto(Math.max(Producto - 1, 0))
-        
+    const sumar = () => {
+        Producto < stock && setProducto (Producto + 1)
+        Producto >= stock && alert('No hay suficiente stock del producto')
+    }
+    
+    const restar = () => {
+        Producto > 0 && setProducto (Producto - 1)
     }
 
+    const agregar = () => {
+        onAdd(Producto);
+    }
 
-    return(
-        <>
+    return (
         <div style={styles.container}>
             <div style={styles.containerButtons}>
-            <button style={styles.button} onClick={restar}>-</button>
-            <p style={styles.value}>{Producto}</p>
-            <button style={styles.button} onClick={sumar}>+</button>
+                <button style={styles.button} onClick={() => restar()}>-</button>
+                <h2>{Producto}</h2>
+                <button style={styles.button} onClick={() => sumar()}>+</button>
             </div>
-        <button style={styles.buttonAdd} onClick={onAdd}>Add To Cart</button>
+            <button style={styles.buttonAdd} onClick={() => agregar()}>Agregar al carrito</button>
         </div>
-        </>
-    )
+    );
 }
 
 const styles = {
